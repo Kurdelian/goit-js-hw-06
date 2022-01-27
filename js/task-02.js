@@ -10,7 +10,7 @@ const ingredients = [
 const ingredientsItem = ingredients.map(ingredient => {
   const itemEl = document.createElement('li')
   itemEl.classList.add('item')
-  itemEl.innerHTML = ingredient
+  itemEl.append(ingredient)
   return itemEl
 })
 

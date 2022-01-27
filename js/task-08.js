@@ -6,17 +6,17 @@ formEl.addEventListener('submit', onFormElSubmit)
 function onFormElSubmit(event) {
 event.preventDefault();
 
-const formElements = {
-    email: event.currentTarget.elements.email.value,
-    password: event.currentTarget.elements.password.value,
+let formElements = {}
+
+const {elements: {email, password}} = event.currentTarget
+if (email.value === '' || password.value === '') {
+    return alert('Все поля должны быть заполнены!')
 }
 
-if (formElements.email === '' || formElements.password === '') {
-    alert('Все поля должны быть заполнены!')
-}
-
-formEl.reset()
+formElements.email = `${email.value}`
+formElements.password = `${password.value}`
 console.log(formElements)
 
+event.currentTarget.reset()
 }
 

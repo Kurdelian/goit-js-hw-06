@@ -1,12 +1,13 @@
 const createButton = document.querySelector('[data-create]')
 const destroyButton = document.querySelector('[data-destroy]')
 const boxes = document.querySelector('#boxes')
+const inputEl = document.querySelector('#controls input')
 
-createButton.addEventListener('click', () => getValue())
-destroyButton.addEventListener('click', () => destroyBoxes())
+createButton.addEventListener('click', getValue)
+destroyButton.addEventListener('click', destroyBoxes)
 
-function getValue() {
-    const value = +document.querySelector('#controls input').value;
+function getValue(event) {
+    const value = +inputEl.value;
     createBoxes(value)
 }
 
@@ -24,6 +25,7 @@ function createBoxes(value) {
 
 function destroyBoxes() {
     boxes.innerHTML = '';
+    inputEl.value = ''
 }
 
 function getRandomHexColor() {
