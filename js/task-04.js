@@ -1,5 +1,6 @@
 const decrementBtn = document.querySelector('[data-action="decrement"]')
 const incrementBtn = document.querySelector('[data-action="increment"]')
+const text = document.querySelector('#value')
 
 let counterValue = 0;
 
@@ -14,6 +15,6 @@ decrementBtn.addEventListener("click", () => {
 })
 
 function makeCounterValue () {
-    document.getElementById("value").textContent = counterValue
+   text.textContent = counterValue
 }
 

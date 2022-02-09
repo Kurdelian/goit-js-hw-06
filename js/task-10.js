@@ -7,7 +7,7 @@ createButton.addEventListener('click', getValue)
 destroyButton.addEventListener('click', destroyBoxes)
 
 function getValue(event) {
-    const value = +inputEl.value;
+    const value = inputEl.value;
     createBoxes(value)
 }
 
@@ -21,11 +21,11 @@ function createBoxes(value) {
         fragment.appendChild(div);
     }
     boxes.appendChild(fragment);
+    inputEl.value = ''
 }
 
 function destroyBoxes() {
     boxes.innerHTML = '';
-    inputEl.value = ''
 }
 
 function getRandomHexColor() {
